@@ -33,3 +33,35 @@ class Solution:
         return ans
 
         
+
+# 9. Palindrome number 
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        temp = x
+        reverse =0
+
+        while temp>0:
+            r = temp%10
+            reverse = reverse*10+r
+            temp//=10
+
+        return reverse==x
+
+
+
+# 1281. Subtract the Product and Sum of Digits of an Integer
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        sum_ =0
+        product= 1
+
+        while n >0:
+            r = n%10
+            sum_ += r
+            product *=r
+
+            n//=10
+
+        return product- sum_
+        

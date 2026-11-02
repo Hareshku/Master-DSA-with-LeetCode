@@ -23,3 +23,22 @@ class Solution:
         set2 = set(nums2)
 
         return list(set1&set2)
+
+
+
+
+# 167. Two Sum II - Input Array Is Sorted
+
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        left =0
+        right = len(nums)-1
+
+        while left<right:
+            sum_ = nums[left]+nums[right]
+            if sum_ ==target:
+                return [left+1, right+1]
+            elif sum_ >target:
+                right-=1
+            else:
+                left+=1

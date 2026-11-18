@@ -80,3 +80,34 @@ class Solution:
         self.ans= []
         self.preorder(root)
         return self.ans
+
+# 100 same tree 
+
+
+
+class Solution:
+    def __init__(self):
+        self.ans = []
+        self.ans1 = []
+
+    def preorder(self, root, arr):
+
+        # Base case
+        if root is None:
+            arr.append(None)
+            return
+
+        # Recursive case
+        arr.append(root.val)
+        self.preorder(root.left, arr)
+        self.preorder(root.right, arr)
+
+    def isSameTree(self, p, q):
+
+        self.ans = []
+        self.ans1 = []
+
+        self.preorder(p, self.ans)
+        self.preorder(q, self.ans1)
+
+        return self.ans == self.ans1
